@@ -1,0 +1,43 @@
+<%- include('partials/header') -%>
+
+<div class="container mt-5 w-50">
+
+    <h2 class="mb-4">Filter Task</h2>
+
+    <form action="/todo/fltr" method="GET">
+        <select name="status" class="form-control">
+            <option value="All">All</option>
+            <option value="InProgress">InProgress</option>
+            <option value="Completed">Completed</option>
+        </select>
+        <button type="submit" class="btn btn-danger btn-block mt-3">Filter Tasks</button>
+
+    </form>
+
+    <% if(todo) { %>
+    <h4 class="text-danger my-4">Filter Results: </h4>
+    <table class="table table-bordered" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Status</th>                
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td><%= todo.name %></td>
+                <td><%= todo.status %></td>                
+            </tr>
+
+        </tbody>
+    </table>
+ <% } else if(todo != ''){ %>
+
+<div class="alert alert-danger mt-4">No Task Found!</div>
+ 
+    <% } %>
+
+</div>
+
+<%- include('partials/footer') -%>

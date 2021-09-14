@@ -1,0 +1,40 @@
+<%- include('partials/header') -%>
+
+<div class="container mt-5 w-50">
+
+    <h2 class="mb-4">Search Task</h2>
+
+    <form action="/todo" method="GET">
+        <input type="text" name="name" class="form-control" placeholder="Task Name">
+
+        <button type="submit" class="btn btn-danger btn-block mt-3">Search Task</button>
+
+    </form>
+
+    <% if(todo) { %>
+    <h4 class="text-danger my-4">Search Results: </h4>
+    <table class="table table-bordered" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Status</th>                
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td><%= todo.name %></td>
+                <td><%= todo.status %></td>                
+            </tr>
+
+        </tbody>
+    </table>
+ <% } else if(todo != ''){ %>
+
+    <div class="alert alert-danger mt-4">Task does not exist with this name.</div>
+
+    <% } %>
+
+</div>
+
+<%- include('partials/footer') -%>

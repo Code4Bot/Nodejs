@@ -1,0 +1,19 @@
+<%- include('partials/header') -%>
+
+<div class="container mt-5 w-50">
+
+    <h2 class="mb-4">Update Todo List</h2>
+
+    <form action="/edit/<%= todo.id %>?_method=PUT" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+        
+        <input type="text" value="<%= todo.name %>" name="name" class="form-control" placeholder="Todo Name">
+
+        <input type="text" value="<%= todo.status %>" name="status" class="form-control" placeholder="Status">
+
+        <button type="submit" class="btn btn-danger btn-block mt-3">Update Todo</button>
+
+    </form>
+</div>
+
+<%- include('partials/footer') -%>

@@ -1,0 +1,15 @@
+<%- include('partials/header') -%>
+<div class="container mt-5 w-50">
+
+    <h2 class="mb-4">Add New Task</h2>
+
+    <form action="/todo/new" method="POST">
+        <input type="text" name="name" class="form-control" placeholder="Task Name">
+
+        <input type="text" name="status" class="form-control" placeholder="Status">        
+
+        <button type="submit" class="btn btn-danger btn-block mt-3">Add Task</button>
+
+    </form>
+</div>
+<%- include('partials/footer') -%>
